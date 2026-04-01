@@ -41,7 +41,6 @@
     cursor: none;
   }
 
-  /* Custom Cursor */
   #cursor {
     position: fixed;
     width: 12px; height: 12px;
@@ -64,12 +63,9 @@
     transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--purple-glow); border-radius: 2px; }
-
-  /* Canvas */
   #matrix-canvas {
     position: fixed;
     top: 0; left: 0;
@@ -79,7 +75,7 @@
     pointer-events: none;
   }
 
-  /* NAV */
+
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -143,7 +139,7 @@
   }
   .menu-toggle svg { width: 20px; height: 20px; }
 
-  /* SECTIONS */
+
   section {
     position: relative;
     z-index: 1;
@@ -156,7 +152,7 @@
     box-sizing: border-box;
   }
 
-  /* ── HERO ── */
+
   #home {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -307,7 +303,6 @@
   .social-link:hover { color: var(--cyan); }
   .social-link svg { width: 18px; height: 18px; }
 
-  /* Section headers */
   .section-header {
     margin-bottom: 3.5rem;
   }
@@ -333,7 +328,6 @@
     background: linear-gradient(90deg, var(--purple), transparent);
   }
 
-  /* ── ABOUT ── */
   .about-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -412,7 +406,6 @@
   .terminal-box .prompt { color: var(--cyan); }
   .terminal-box .output { color: #94a3b8; }
 
-  /* ── EDUCATION ── */
   .education-wrap {
     display: flex;
     justify-content: center;
@@ -462,7 +455,6 @@
     color: #94a3b8;
   }
 
-  /* ── EXPERIENCE ── */
   .experience-wrap { width: 100%; max-width: 800px; margin: 0 auto; }
   .exp-card {
     background: var(--card);
@@ -537,7 +529,6 @@
   .exp-link:hover { color: var(--cyan); border-color: rgba(34,211,238,0.45); }
   .exp-link svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-  /* ── CERTIFICATES · SKILLS · PROJECTS (shared layout width) ── */
   #certificates .cert-grid,
   #skills .skills-grid,
   #projects .projects-grid {
@@ -658,7 +649,6 @@
   .cert-link:hover { color: var(--green); border-color: rgba(74,222,128,0.45); }
   .cert-link svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-  /* ── SKILLS (grid rules under #skills .skills-grid above) ── */
   .skill-card {
     min-width: 0;
     max-width: 100%;
@@ -711,7 +701,6 @@
   }
   .skill-card:hover .skill-bar { transform: scaleX(1); }
 
-  /* ── PROJECTS (grid rules under #projects .projects-grid above) ── */
   .project-card {
     min-width: 0;
     max-width: 100%;
@@ -797,7 +786,6 @@
     letter-spacing: 1px;
   }
 
-  /* ── CONTACT ── */
   .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -857,9 +845,24 @@
     border-color: var(--purple);
     box-shadow: 0 0 15px rgba(168,85,247,0.15);
   }
+  .form-input.error, .form-textarea.error {
+    border-color: var(--red);
+    box-shadow: 0 0 15px rgba(248,113,113,0.15);
+  }
+  .form-error {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--red);
+    letter-spacing: 0.5px;
+    display: none;
+  }
+  .form-error.show { display: block; }
+  .form-input.success {
+    border-color: var(--green);
+    box-shadow: 0 0 15px rgba(74,222,128,0.15);
+  }
   .form-textarea { min-height: 130px; }
 
-  /* FOOTER */
   footer {
     position: relative;
     z-index: 1;
@@ -877,7 +880,6 @@
   }
   footer span { color: var(--purple); }
 
-  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -901,7 +903,6 @@
     50% { transform: translateY(-12px); }
   }
 
-  /* Reveal on scroll */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -912,7 +913,6 @@
     transform: translateY(0);
   }
 
-  /* Scanline overlay */
   body::after {
     content: '';
     position: fixed;
@@ -924,7 +924,6 @@
     z-index: 9997;
   }
 
-  /* Glow blobs */
   .blob {
     position: fixed;
     border-radius: 50%;
@@ -1003,7 +1002,7 @@
 <div class="blob blob-1"></div>
 <div class="blob blob-2"></div>
 
-<!-- NAV -->
+
 <nav>
   <a href="#home" class="nav-logo">AG<span>.</span></a>
   <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -1024,8 +1023,6 @@
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
-
-<!-- HERO -->
 <section id="home">
   <div class="hero-content">
     <p class="hero-tag">// INITIALIZING PORTFOLIO...</p>
@@ -1069,8 +1066,6 @@
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="section-header reveal">
     <p class="section-tag">// 01. ABOUT</p>
@@ -1120,8 +1115,6 @@
     </div>
   </div>
 </section>
-
-<!-- EDUCATION -->
 <section id="education">
   <div class="section-header reveal">
     <p class="section-tag">// 02. EDUCATION</p>
@@ -1143,8 +1136,6 @@
     </article>
   </div>
 </section>
-
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header reveal">
     <p class="section-tag">// 03. EXPERIENCE</p>
@@ -1169,8 +1160,6 @@
     </article>
   </div>
 </section>
-
-<!-- CERTIFICATES -->
 <section id="certificates">
   <div class="section-header reveal">
     <p class="section-tag">// 04. CERTIFICATES</p>
@@ -1296,8 +1285,6 @@
     </article>
   </div>
 </section>
-
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header reveal">
     <p class="section-tag">// 05. SKILLS</p>
@@ -1346,8 +1333,6 @@
     </div>
     </div>
 </section>
-
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header reveal">
     <p class="section-tag">// 06. PROJECTS</p>
@@ -1434,8 +1419,6 @@
 
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
     <p class="section-tag">// 07. CONTACT</p>
@@ -1460,30 +1443,30 @@
       </div>
     </div>
     <div class="contact-form reveal">
-      <div class="form-group">
-        <label class="form-label">// YOUR NAME</label>
-        <input type="text" class="form-input" placeholder="John Doe" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">// EMAIL ADDRESS</label>
-        <input type="email" class="form-input" placeholder="john@example.com" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">// MESSAGE</label>
-        <textarea class="form-textarea" placeholder="Hello Aryan, I'd like to connect..."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;padding:1rem;font-size:0.95rem;cursor:none;" onclick="alert('Message sent!')">SEND MESSAGE</button>
+      <form id="contactForm">
+        <div class="form-group">
+          <label class="form-label">// YOUR NAME</label>
+          <input type="text" id="contactName" class="form-input" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">// EMAIL ADDRESS</label>
+          <input type="email" id="contactEmail" class="form-input" placeholder="john@example.com" required />
+          <div class="form-error" id="emailError"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">// MESSAGE</label>
+          <textarea id="contactMessage" class="form-textarea" placeholder="Hello Aryan, I'd like to connect..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;padding:1rem;font-size:0.95rem;cursor:none;">SEND MESSAGE</button>
+      </form>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   Designed & Built by <span>Aryan Gupta</span> &nbsp;|&nbsp; <span>2026</span> &nbsp;|&nbsp; Stay Secure 🔐
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1514,8 +1497,6 @@
       ring.style.height = '36px';
     });
   });
-
-  // Matrix canvas
   const canvas = document.getElementById('matrix-canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -1539,8 +1520,6 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
-
-  // Typing effect
   const roles = ['CyberSecurity Learner', 'Ethical Hacking Enthusiast', 'Security Analyst (Aspiring)', 'Penetration Tester (In Training)', 'Linux  User'];
   let roleIdx = 0, charIdx = 0, deleting = false;
   const typedEl = document.getElementById('typed-text');
@@ -1558,8 +1537,6 @@
     setTimeout(type, deleting ? 50 : 80);
   }
   type();
-
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
@@ -1569,8 +1546,6 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
-
-  // Nav active
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.querySelector('nav');
   if (menuToggle && nav) {
@@ -1585,8 +1560,6 @@
       });
     });
   }
-
-  // Nav active
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -1597,6 +1570,96 @@
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--purple)' : '';
     });
+  });
+
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailInput = document.getElementById('contactEmail');
+  const emailError = document.getElementById('emailError');
+  const contactForm = document.getElementById('contactForm');
+
+  function isValidEmail(email) {
+    return emailRegex.test(email);
+  }
+
+  function showEmailError(message) {
+    emailError.textContent = message;
+    emailError.classList.add('show');
+    emailInput.classList.add('error');
+    emailInput.classList.remove('success');
+  }
+
+  function clearEmailError() {
+    emailError.textContent = '';
+    emailError.classList.remove('show');
+    emailInput.classList.remove('error');
+  }
+
+  function showEmailSuccess() {
+    clearEmailError();
+    emailInput.classList.add('success');
+  }
+
+  emailInput.addEventListener('blur', () => {
+    const email = emailInput.value.trim();
+    if (email === '') {
+      clearEmailError();
+      emailInput.classList.remove('success');
+    } else if (!isValidEmail(email)) {
+      showEmailError('✗ Invalid email format');
+    } else {
+      showEmailSuccess();
+    }
+  });
+
+  emailInput.addEventListener('input', () => {
+    const email = emailInput.value.trim();
+    if (email !== '' && isValidEmail(email)) {
+      showEmailSuccess();
+    } else if (email !== '' && !isValidEmail(email)) {
+      emailInput.classList.add('error');
+      emailInput.classList.remove('success');
+      emailError.classList.add('show');
+      emailError.textContent = '✗ Invalid email format';
+    } else {
+      clearEmailError();
+      emailInput.classList.remove('success');
+    }
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const email = emailInput.value.trim();
+    const name = document.getElementById('contactName').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    // Validate all fields
+    if (!name) {
+      alert('Please enter your name');
+      return;
+    }
+
+    if (!email) {
+      showEmailError('Email is required');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      showEmailError('✗ Please enter a valid email address');
+      return;
+    }
+
+    if (!message) {
+      alert('Please enter a message');
+      return;
+    }
+
+    // Show success message
+    alert('✓ Message sent successfully! I\'ll get back to you soon.');
+    contactForm.reset();
+    clearEmailError();
+    emailInput.classList.remove('success');
   });
 </script>
 </body>
